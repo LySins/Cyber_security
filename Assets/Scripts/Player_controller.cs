@@ -12,16 +12,15 @@ public class Player_controller : MonoBehaviour
 
     void Start()
     {
-        
-        
+       
     }
 
     void Update()
     {
 
         
-        //
-        #if UNITY_ANDROID
+        
+        #if UNITY_ANDROID //Use for determing the start stand.
         if(Input.touchCount > 0) 
         {
             _touch = Input.GetTouch(0);

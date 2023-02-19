@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player_controller.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\General_player_property.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
