@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player_layer
   - Enemyfire
+  - PlayerFire
   layers:
   - Default
   - TransparentFX
