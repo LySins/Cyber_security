@@ -10,27 +10,38 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator _enemySpawnCoroutine;
     int _enemyCounter;
     public int _enemyLimit = 5;
+    public Transform _enemySpawner;
 
     void Start()
     {
+        
         _enemyCounter = 0;
         _flagEnemySpawnerCoroutine = true;
-        _enemySpawnCoroutine = EnemySpawn();
+        _enemySpawnCoroutine = EnemySpawnCooldown();
         StartCoroutine(_enemySpawnCoroutine);
 
     }
    
-    IEnumerator EnemySpawn()
+    protected IEnumerator EnemySpawnCooldown()
     {
 
         while (!(_enemyCounter >= _enemyLimit))
         {
-            Instantiate(_enemyOriginal,
-                            _enemyOriginal.transform.position + new Vector3(Random.value, Random.value, Random.value),
-                            new Quaternion(0, 0, 0, 1));
+            enemyCloning();
             _enemyCounter++;
 
             yield return new WaitForSeconds(2);
         }
-    } 
+    }
+
+    private void enemyCloning()
+    {
+        Instantiate(
+                    _enemyOriginal,
+                    new Vector3(
+                        _enemySpawner.position.x + Random.Range(-1f,1f),
+                        _enemySpawner.position.y + Random.Range(0, 1f),
+                        0),
+                    new Quaternion(0, 0, 0, 1)); ;
+    }
 }
