@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 //using UnityEngine.tvOS;
 
@@ -38,5 +40,24 @@ public class Player_controller : MonoBehaviour
 
 
         #endif
+
+        
+    }
+
+
+    float _rayDistance = 6;
+    private void FixedUpdate()
+    {
+        //RaycastHit2D _raycastHit2D;
+        if(Physics2D.Raycast(transform.position+ new Vector3(0,0.3f,0), transform.TransformDirection(Vector2.up), _rayDistance))
+        {
+            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up)* _rayDistance, Color.green);
+            Debug.Log("Did Hit");
+        }
+        else
+        {
+            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up) * _rayDistance, Color.red);
+            Debug.Log("Did not Hit");
+        }
     }
 }
