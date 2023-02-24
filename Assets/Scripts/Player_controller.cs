@@ -30,12 +30,10 @@ public class Player_controller : MonoBehaviour
         if(Physics2D.Raycast(transform.position+ new Vector3(0,0.3f,0), transform.TransformDirection(Vector2.up), _rayDistance))
         {
             Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up)* _rayDistance, Color.green);
-            Debug.Log("Did Hit");
         }
         else
         {
             Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up) * _rayDistance, Color.red);
-            Debug.Log("Did not Hit");
         }
     }
 

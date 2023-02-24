@@ -804,11 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449020964685592010, guid: fbcf6f6e2c8a88d498d7883724ba2220, type: 3}
       propertyPath: _enemyLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5449020964685592010, guid: fbcf6f6e2c8a88d498d7883724ba2220, type: 3}
-      propertyPath: _spawnCoolDown
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5449020964685592011, guid: fbcf6f6e2c8a88d498d7883724ba2220, type: 3}
       propertyPath: m_Name
