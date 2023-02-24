@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Player_controller : MonoBehaviour
 {
-    public float _playerSpeed = 2.0f;
+    public float _playerSpeed = 2.0f, _rayDistance = 6;
     public Transform _playerTransform;
     private Touch _touch;
     private Vector2 _triggerPosition = new Vector2(0,0);
@@ -19,33 +19,11 @@ public class Player_controller : MonoBehaviour
 
     void Update()
     {
-
-        
-        
-        #if UNITY_ANDROID //Use for determing the start stand.
-        if(Input.touchCount > 0) 
-        {
-            _touch = Input.GetTouch(0);
-            if (_touch.position.x >  Screen.width/2)
-            {
-                _playerTransform.position +=
-                new Vector3(1 * Time.deltaTime * _playerSpeed, 0, 0);
-            }
-            else if (_touch.position.x < Screen.width / 2)
-                _playerTransform.position +=
-                new Vector3(-1 * Time.deltaTime * _playerSpeed, 0, 0);
-        }
-
-
-
-
-        #endif
-
-        
+        PlayerMovement();
     }
 
 
-    float _rayDistance = 6;
+    
     private void FixedUpdate()
     {
         //RaycastHit2D _raycastHit2D;
@@ -60,4 +38,23 @@ public class Player_controller : MonoBehaviour
             Debug.Log("Did not Hit");
         }
     }
+
+    private void PlayerMovement()
+    {
+#if UNITY_ANDROID //Use for determing the start stand.
+        if (Input.touchCount > 0)
+        {
+            _touch = Input.GetTouch(0);
+            if (_touch.position.x > Screen.width / 2)
+            {
+                _playerTransform.position +=
+                new Vector3(1 * Time.deltaTime * _playerSpeed, 0, 0);
+            }
+            else if (_touch.position.x < Screen.width / 2)
+                _playerTransform.position +=
+                new Vector3(-1 * Time.deltaTime * _playerSpeed, 0, 0);
+        }
+#endif
+    }
+
 }

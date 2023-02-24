@@ -154,7 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyHealth: 100
   _takeDamage: 10
+  _enemyGivenDamage: 10
+  _rayDistance: 10
+  _enemyShootCoolDown: 5
   _enemyTransform: {fileID: 6784025041774560352}
+  _enemyBullet: {fileID: 8757789032301700844, guid: dcd6aa85f61e3d547be86732f569edf5, type: 3}
 --- !u!70 &1774295595
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
