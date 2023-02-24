@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760b29930ef68244999f17adf70780cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyOriginal: {fileID: 6784025041774560359, guid: 21440bd2d30b0454a8b3b6eb79beefbf, type: 3}
   _flagEnemySpawnerCoroutine: 0
   _enemyLimit: 5
+  _spawnCoolDown: 1
   _enemySpawner: {fileID: 5449020964685592005}
+  _enemyOriginal: {fileID: 6784025041774560359, guid: 21440bd2d30b0454a8b3b6eb79beefbf, type: 3}

@@ -5,43 +5,52 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject _enemyOriginal;
     public bool _flagEnemySpawnerCoroutine;
-    IEnumerator _enemySpawnCoroutine;
-    int _enemyCounter;
-    public int _enemyLimit = 5;
+    public int _enemyLimit = 5, _spawnCoolDown = 5;
+    
+    private float _timerSpawn = 0;
+    private int _enemyCounter = 1;
+    
     public Transform _enemySpawner;
+    public GameObject _enemyOriginal;
 
     void Start()
     {
-        
-        _enemyCounter = 0;
-        _flagEnemySpawnerCoroutine = true;
-        _enemySpawnCoroutine = EnemySpawnCooldown();
-        StartCoroutine(_enemySpawnCoroutine);
-
+        enemyCloning();
     }
-   
-    protected IEnumerator EnemySpawnCooldown()
+
+
+    private void Update()
     {
-
-        while (!(_enemyCounter >= _enemyLimit))
+        if (_timerSpawn <= 0 && _enemyCounter <= _enemyLimit)
         {
-            enemyCloning();
-            _enemyCounter++;
-
-            yield return new WaitForSeconds(2);
+            _timerSpawn = _spawnCoolDown;
+            _enemyCounter++;           
         }
+        else _timerSpawn -= Time.deltaTime;
     }
 
     private void enemyCloning()
     {
+        for (int i = 0; i < _enemyLimit; i++)
+        {
+            Instantiate(
+                                _enemyOriginal,
+                                new Vector3(
+                                    _enemySpawner.position.x + (-_enemyLimit/2 + i),
+                                    _enemySpawner.position.y + Random.Range(0, 1f),
+                                    0),
+                                new Quaternion(0, 0, 0, 1));
+        }
+
+        /*
         Instantiate(
                     _enemyOriginal,
                     new Vector3(
                         _enemySpawner.position.x + Random.Range(-1f,1f),
                         _enemySpawner.position.y + Random.Range(0, 1f),
                         0),
-                    new Quaternion(0, 0, 0, 1)); ;
+                    new Quaternion(0, 0, 0, 1));
+        */
     }
 }
