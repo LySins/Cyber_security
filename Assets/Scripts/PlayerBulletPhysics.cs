@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerBulletPhysics : MonoBehaviour
 {
-    private float _timer = 0;
     public float _bulletSpeed = 1;
     void Start()
     {

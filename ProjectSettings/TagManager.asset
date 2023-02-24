@@ -8,6 +8,8 @@ TagManager:
   - Enemyfire
   - PlayerFire
   - FinishLineForEnemy
+  - EnemyThief1
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1322545678
 Transform:
   m_ObjectHideFlags: 0
@@ -657,7 +657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1775166406
 Transform:
   m_ObjectHideFlags: 0
@@ -693,6 +693,10 @@ PrefabInstance:
       propertyPath: _playerBullet
       value: 
       objectReference: {fileID: 3920285881479875783, guid: 188c43b5307e7854a98dadc68597b6a7, type: 3}
+    - target: {fileID: 1074843790, guid: 8c3e1f38990c04d43a9d292b148f3140, type: 3}
+      propertyPath: _shootPlayerCoolDown
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2170204139404955805, guid: 8c3e1f38990c04d43a9d292b148f3140, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -794,6 +798,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5449020964685592010, guid: fbcf6f6e2c8a88d498d7883724ba2220, type: 3}
+      propertyPath: _enemyLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5449020964685592011, guid: fbcf6f6e2c8a88d498d7883724ba2220, type: 3}
       propertyPath: m_Name
       value: EnemySpawn
@@ -807,6 +815,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8979686753120369021, guid: 188c43b5307e7854a98dadc68597b6a7, type: 3}
+      propertyPath: _bulletSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3920285881479875783, guid: 188c43b5307e7854a98dadc68597b6a7, type: 3}
       propertyPath: m_Name
       value: PlayerFire
