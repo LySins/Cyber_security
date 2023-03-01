@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Unity.Burst.Intrinsics.X86.Avx;
+
 
 public class TheoryNavigation : MonoBehaviour
 {
@@ -35,6 +35,16 @@ public class TheoryNavigation : MonoBehaviour
                 break;
 
         }
+
+    }
+
+    public void ButtonTheoryLessonsBack()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ButtonBackToTheoryLessons()
+    {
 
     }
 

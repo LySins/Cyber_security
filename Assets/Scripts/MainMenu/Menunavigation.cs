@@ -8,7 +8,7 @@ public class Menunavigation : MonoBehaviour
  
     public void PlayPressed()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("LernScene");
     }
 
     public void ExitPressed()
