@@ -3,67 +3,39 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class TheoryNavigation : MonoBehaviour
 {
-    static int _theoryLogical = 1;
-    private string _theoryName;
-    public void TheoryChanger(int _theory)
+    
+
+    public void TheoryChanger(int _theoryNumber)
     {
-        switch (_theory)
+        GameObject _tmp = gameObject.transform.Find("MainTheory").gameObject;
+
+        switch(_theoryNumber)
         {
             case 1:
-                _theoryLogical = 1;
-                Debug.Log("1");
-                //SceneManager.LoadScene("Theory");
+                _tmp.transform.Find("Theory1").gameObject.SetActive(true);
                 break;
             case 2:
-                _theoryLogical = 2;
-                Debug.Log("2");
-                // SceneManager.LoadScene("Theory");
+                _tmp.transform.Find("Theory2").gameObject.SetActive(true);
+
                 break;
             case 3:
-                _theoryLogical = 3;
-                Debug.Log("3");
-                // SceneManager.LoadScene("Theory");
+                _tmp.transform.Find("Theory3").gameObject.SetActive(true);
+
                 break;
             case 4:
-                _theoryLogical = 4;
-                Debug.Log("4");
-                // SceneManager.LoadScene("Theory");
+                _tmp.transform.Find("Theory4").gameObject.SetActive(true);
+
                 break;
+            default:
+                _tmp.transform.Find("Theory1").gameObject.SetActive(true);
+                break;
+
         }
-    }
-
-
-    private void Start()
-    {
-        //if (_theoryLogical <= 0) SceneManager.LoadScene("LernScene");
-        _theoryName = "Theory" + $"{_theoryLogical}";
-        Debug.Log(_theoryName);
-        GameObject _theoryChanger = GameObject.Find("Theory1");
-        _theoryChanger.SetActive(true);
 
     }
 
-    private void Update()
-    {
-        //TheoryChange();
-        Keys();
-    }
-
-    void Keys()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) _theoryLogical = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) _theoryLogical = 2;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) _theoryLogical = 3;
-        if (Input.GetKeyDown(KeyCode.Alpha4)) _theoryLogical = 4;
-    }
-    void TheoryChange()
-    {
-        _theoryName = "Theory" + $"{_theoryLogical}";
-        Debug.Log(_theoryName);
-        GameObject _theoryChanger = GameObject.Find(_theoryName);
-        _theoryChanger.SetActive(true);
-    }
 }

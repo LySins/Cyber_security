@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 3
+  _rayDistance: 6
   _playerTransform: {fileID: 2170204139404955805}
 --- !u!50 &2170204139404955795
 Rigidbody2D:
@@ -194,7 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: 100
-  _shootPlayerCoolDown: 5
-  _enemyDamage: 10
+  _shootPlayerCoolDown: 1
+  _playerGivenDamage: 10
   _playerCollider: {fileID: 1074843786}
-  _playerBullet: {fileID: 0}
+  _playerBullet: {fileID: 3920285881479875783, guid: 188c43b5307e7854a98dadc68597b6a7, type: 3}
+  _enemyGameObject: {fileID: 0}
