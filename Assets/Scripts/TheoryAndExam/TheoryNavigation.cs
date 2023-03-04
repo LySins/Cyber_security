@@ -45,7 +45,12 @@ public class TheoryNavigation : MonoBehaviour
 
     public void ButtonBackToTheoryLessons()
     {
+        GameObject _tmp = gameObject.transform.Find("MainTheory").gameObject;
 
+        _tmp.transform.Find("Theory1").gameObject.SetActive(false);
+        _tmp.transform.Find("Theory2").gameObject.SetActive(false);
+        _tmp.transform.Find("Theory3").gameObject.SetActive(false);
+        _tmp.transform.Find("Theory4").gameObject.SetActive(false);
     }
 
 }
