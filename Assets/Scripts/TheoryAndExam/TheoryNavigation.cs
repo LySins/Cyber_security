@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class TheoryNavigation : MonoBehaviour
 {
-    
+    private int _theoryNumberBack;
 
     public void TheoryChanger(int _theoryNumber)
+
     {
+        _theoryNumberBack = _theoryNumber;
         GameObject _tmp = gameObject.transform.Find("MainTheory").gameObject;
 
         switch(_theoryNumber)
