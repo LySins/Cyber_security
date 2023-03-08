@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: 100
-  _shootPlayerCoolDown: 10
+  _shootPlayerCoolDown: 2
   _playerGivenDamage: 5
   _playerCollider: {fileID: 1074843786}
   _playerBullet: {fileID: 3920285881479875783, guid: 188c43b5307e7854a98dadc68597b6a7, type: 3}
