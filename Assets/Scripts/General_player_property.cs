@@ -14,7 +14,10 @@ public class General_player_property : MonoBehaviour
 
     void Start()
     {
-        _takeDamage = GameObject.FindGameObjectWithTag("EnemyThief1").GetComponent<EnemyGeneral>()._enemyGivenDamage;
+        _takeDamage = GameObject.
+            FindGameObjectWithTag("EnemyThief1").
+            GetComponent<EnemyGeneral>()
+            ._enemyGivenDamage;
     }
     void Update()
     {
@@ -36,7 +39,9 @@ public class General_player_property : MonoBehaviour
         {
             _shoot = _shootPlayerCoolDown;
             _playerBulletVector3 = gameObject.transform.position;
-            Instantiate(_playerBullet, _playerBulletVector3, Quaternion.Euler(0, 0, 0));
+            Instantiate(_playerBullet,
+                _playerBulletVector3,
+                Quaternion.Euler(0, 0, 0));
         }
         else _shoot -= Time.deltaTime;
         

@@ -38,7 +38,9 @@ public class EnemySpawner : MonoBehaviour
                                 _enemyOriginal,
                                 new Vector3(
                                     _enemySpawner.position.x + (-_enemyLimit/2 + i),
-                                    _enemySpawner.position.y + Random.Range(0, 1f),
+                                    _enemySpawner.position.y + Random.Range(
+                                        0,
+                                    1f),
                                     0),
                                 new Quaternion(0, 0, 0, 1));
         }

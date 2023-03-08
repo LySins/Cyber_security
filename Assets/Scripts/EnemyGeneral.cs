@@ -62,7 +62,9 @@ public class EnemyGeneral : MonoBehaviour
         {
             _enemyShootTimer = _enemyShootCoolDown;
             _enemyBulletVector3= gameObject.transform.position;
-            Instantiate(_enemyBullet, _enemyBulletVector3, Quaternion.Euler(0,0,0));
+            Instantiate(_enemyBullet,
+                _enemyBulletVector3,
+                Quaternion.Euler(0,0,0));
         }
         else _enemyShootTimer-= Time.deltaTime;
 
@@ -70,14 +72,24 @@ public class EnemyGeneral : MonoBehaviour
     private bool EnemyRayCasting()
     {
         _enemyOrigin = gameObject.transform.position;
-        if (Physics2D.Raycast(_enemyOrigin + new Vector2(0, -0.3f), transform.TransformDirection(Vector2.down), 100, _playerLayerMask))
+        if (Physics2D.Raycast(
+            _enemyOrigin + new Vector2(0, -0.3f),
+            transform.TransformDirection(Vector2.down),
+            100,
+            _playerLayerMask))
         {
-            Debug.DrawRay(gameObject.transform.position + new Vector3(0, -0.3f), transform.TransformDirection(Vector2.down) * _rayDistance, Color.green);
+            Debug.DrawRay(
+                gameObject.transform.position + new Vector3(0, -0.3f),
+                transform.TransformDirection(Vector2.down) * _rayDistance,
+                Color.green);
             return true;
         }
         else
         {
-            Debug.DrawRay(gameObject.transform.position + new Vector3(0, -0.3f), transform.TransformDirection(Vector2.down) * _rayDistance, Color.red);
+            Debug.DrawRay(
+                gameObject.transform.position + new Vector3(0, -0.3f),
+                transform.TransformDirection(Vector2.down) * _rayDistance,
+                Color.red);
             return false;
         }
     }

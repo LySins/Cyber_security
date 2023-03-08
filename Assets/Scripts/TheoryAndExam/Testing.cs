@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Testing : MonoBehaviour
 {
@@ -45,5 +46,9 @@ public class Testing : MonoBehaviour
         }
         */
         
+    }
+    public void BonusSceneOn()
+    {
+        SceneManager.LoadScene("BonusScene");
     }
 }
