@@ -75,7 +75,7 @@ public class EnemyGeneral : MonoBehaviour
         if (Physics2D.Raycast(
             _enemyOrigin + new Vector2(0, -0.3f),
             transform.TransformDirection(Vector2.down),
-            100,
+            _rayDistance,
             _playerLayerMask))
         {
             Debug.DrawRay(
