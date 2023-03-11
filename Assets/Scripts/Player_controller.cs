@@ -7,33 +7,31 @@ using UnityEngine;
 
 public class Player_controller : MonoBehaviour
 {
-    public float _playerSpeed = 2.0f, _rayDistance = 6;
+    [SerializeField]private float _playerSpeed = 2.0f, _rayDistance = 6;
     public Transform _playerTransform;
     private Touch _touch;
     private Vector2 _triggerPosition = new Vector2(0,0);
-
-    void Start()
-    {
-       
-    }
-
-    void Update()
+    private void Update()
     {
         PlayerMovement();
     }
 
-
-    
     private void FixedUpdate()
     {
         //RaycastHit2D _raycastHit2D;
-        if(Physics2D.Raycast(transform.position+ new Vector3(0,0.3f,0), transform.TransformDirection(Vector2.up), _rayDistance))
+        if(Physics2D.Raycast(transform.position+ new Vector3(0,0.3f,0),
+            transform.TransformDirection(Vector2.up),
+            _rayDistance))
         {
-            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up)* _rayDistance, Color.green);
+            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0),
+                transform.TransformDirection(Vector2.up)* _rayDistance,
+                Color.green);
         }
         else
         {
-            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0), transform.TransformDirection(Vector2.up) * _rayDistance, Color.red);
+            Debug.DrawRay(transform.position + new Vector3(0, 0.3f, 0),
+                transform.TransformDirection(Vector2.up) * _rayDistance,
+                Color.red);
         }
     }
 

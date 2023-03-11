@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EnemyBulletPhysics : MonoBehaviour
 {
-    public float _enemyBulletSpeed = 1;
-    void Start()
+    [SerializeField] private float _enemyBulletSpeed = 1;
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        gameObject.transform.position += new Vector3(0,-1*_enemyBulletSpeed*Time.deltaTime, 0);
+        gameObject.transform.position += 
+            new Vector3(0,
+            -1*_enemyBulletSpeed*Time.deltaTime,
+            0);
     }
 }

@@ -10,7 +10,6 @@ public class TheoryNavigation : MonoBehaviour
     private int _theoryNumberBack;
 
     public void TheoryChanger(int _theoryNumber)
-
     {
         _theoryNumberBack = _theoryNumber;
         GameObject _tmp = gameObject.transform.Find("MainTheory").gameObject;
@@ -35,9 +34,7 @@ public class TheoryNavigation : MonoBehaviour
             default:
                 _tmp.transform.Find("Theory1").gameObject.SetActive(true);
                 break;
-
         }
-
     }
 
     public void ButtonTheoryLessonsBack()

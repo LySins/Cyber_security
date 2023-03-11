@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public bool _flagEnemySpawnerCoroutine;
-    public int _enemyLimit = 5, _spawnCoolDown = 5;
+    [SerializeField] private bool _flagEnemySpawnerCoroutine;
+    [SerializeField] private int _enemyLimit = 5, _spawnCoolDown = 5;
     
     private float _timerSpawn = 0;
     private int _enemyCounter = 1;
-    
-    public Transform _enemySpawner;
-    public GameObject _enemyOriginal;
 
-    void Start()
+    [SerializeField] private Transform _enemySpawner;
+    [SerializeField] private GameObject _enemyOriginal;
+
+    private void Start()
     {
-        enemyCloning();
+        EnemyCloning();
     }
 
 
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         else _timerSpawn -= Time.deltaTime;
     }
 
-    private void enemyCloning()
+    private void EnemyCloning()
     {
         for (int i = 0; i < _enemyLimit; i++)
         {
